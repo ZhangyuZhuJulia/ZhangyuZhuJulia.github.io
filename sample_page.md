@@ -31,6 +31,7 @@ ggplot(aes(fill = group, x=anyChard,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePu
 Graph: 
 <br><br>
 <img src="images/slice_dice_3.png"/>
+<br><br>
 Code:
 <br><br>
 
