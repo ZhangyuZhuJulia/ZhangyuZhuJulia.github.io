@@ -77,7 +77,17 @@ Identify the ideal product for the a priori segments and profile the segment-lev
 Result Visualization:
 <br><br>
 <img src="images/project_2_2.png?raw=true"/>
+<br><br>
+**Analysis Results**
 <br>
+age = 0 & gender = 0 (a0g0): $119.99 + 26 inches + rocking + racing
+<br>
+age = 0 & gender = 1 (a0g1): $119.99 + 26 inches + rocking + glamourous
+<br>
+age = 1 & gender = 0 (a1g0): $119.99 + 26 inches + bouncing + racing
+<br>
+age = 1 & gender = 1 (a1g1): $119.99 + 26 inches + rocking + glamourous
+<br><br>
 Code:
 
 ```
