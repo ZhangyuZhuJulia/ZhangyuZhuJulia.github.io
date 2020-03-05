@@ -9,7 +9,7 @@ I had experience with getting insights from analyzing large datasets using multi
 
 
 [Project 1 Title](/sample_page)
-<img src="images/slice_dice_1.png?raw=true"/>
+<img src="images/sliec_dice_1.png?raw=true"/>
 <img src="images/slice_dice_2.png?raw=true"/>
 
 
