@@ -8,8 +8,9 @@ set of customers; Examining the impact of an email that was intended to drive pu
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
 #### Grouped customers based on their purchased products before. 
+Graph:
 <img src="images/sliec_dice_1.png"/>
-Code
+Code:
 
 ```
 a. Chard 
