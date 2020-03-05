@@ -26,7 +26,7 @@ ggplot(aes(fill = group, x=anyChard,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePu
 + Graph: 
 <img src="images/sliec_dice_3.png"/>
 Code:
-```
+
 b. Sav  
 sav_blanc = 
     data_slice_2 %>%
@@ -38,7 +38,7 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
     geom_bar(position=dodge,stat="identity",width = 0.5)+
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
     geom_errorbar(position=dodge,width = 0.5)
-```
+
 
 #### Grouped customers based on when did they make their purchase behavior or their customer features.
 <img src="images/slice_dice_2.png"/>
