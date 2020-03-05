@@ -7,11 +7,40 @@ set of customers; Examining the impact of an email that was intended to drive pu
 
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
+#### Grouped customers based on their purchased products before. 
 <img src="images/sliec_dice_1.png"/>
-Grouped customers based on did they purchased Chard before. 
-<img src="images/slice_dice_2.png"/>
-Grouped customers based on when did they make their purchase behavior or their customer features.
+Code:
+```
+# a. Chard 
+chard = 
+    data_slice_2 %>%
+    group_by(group,anyChard) %>%
+    summarise(N = n(),Open = mean(open),Click = mean(click),Purch = mean(purch), 
+              seOpen = sd(open)/sqrt(N),seClick = sd(click)/sqrt(N), sePurch = sd(purch)/sqrt(N))
 
+ggplot(aes(fill = group, x=anyChard,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePurch),data=chard)+
+    geom_bar(position=dodge,stat="identity",width = 0.5)+
+    geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
+    geom_errorbar(position=dodge,width = 0.5)
+  ```
+<img src="images/sliec_dice_3.png"/>
+Code:
+```
+# b. Sav  
+sav_blanc = 
+    data_slice_2 %>%
+    group_by(group,anySav_blanc) %>%
+    summarise(N = n(),Open = mean(open),Click = mean(click),Purch = mean(purch), 
+              seOpen = sd(open)/sqrt(N),seClick = sd(click)/sqrt(N), sePurch = sd(purch)/sqrt(N))
+
+ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePurch),data=sav_blanc)+
+    geom_bar(position=dodge,stat="identity",width = 0.5)+
+    geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
+    geom_errorbar(position=dodge,width = 0.5)
+```
+#### Grouped customers based on when did they make their purchase behavior or their customer features.
+<img src="images/slice_dice_2.png"/>
+Code:
 ```
 ## 1) recent buyers vs. non-recent buyers: 
 # new column
@@ -36,6 +65,7 @@ ggplot(aes(fill=group,y=Purch,x=purchased_in_past,ymax=Purch+sePurch,ymin=Purch-
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
     geom_errorbar(position=dodge)
 ```
+#### Grouped customers based on past purchase amount
 
 
 ### 2. “Individual-level” Conditional Causal Effect Estimates
