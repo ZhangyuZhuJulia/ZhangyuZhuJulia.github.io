@@ -131,6 +131,8 @@ Use disaggregate analysis with a first choice rule to forecast market shares. Ca
 Suggest the best possible product line strategy given considerations related to competitive response, cannibalization, profitability, and long-run performance. 
 <br><br>
 Code:
+<br>
+**Simulate market share**
 ```
 # Prepare Data
 d_data = data.frame(ID = c(1:200))
@@ -178,6 +180,7 @@ simFCScenarios = function(scenarios,data,...){
 }
 
 # for short term effection -- assume competitor does not responses
+# add possible scenarios
 scens = list()
 scens[[1]]=c(13,5,7)
 scens[[2]]=c(13,4,7)
@@ -195,6 +198,7 @@ market_share = simFCScenarios(scens,d_data[2:17])[,c(4,5,7,13,14,16)]
 
 ```
 # for longer term -- assume competitor responses
+# add possible scenarios
 scens_2 = list()
 scens_2[[1]]=c(13,5,8)
 scens_2[[2]]=c(13,4,8)
@@ -210,4 +214,21 @@ market_share_2 = simFCScenarios(scens_2,d_data[2:17])[,c(4,5,8,13,14,16)]
 
 ```
 <img src="images/project_2_marketshare2.png?raw=true"/>
+<br><br>
+**Calculate profit and choose the best scenarios combination**
+<br>
+Result:
+<br>
+Assumption: The competitor won’t respond immediately.
+<br>
+Our best combination: 1.5% profile 5 and 88.5% profile 14.
+<br>
+Maximum Profit: $266,497
+<br>
+Assumption: The competitor respond by lower their price to $119.99.
+<br>
+our best combination: profile 4 and profile 14
+<br>
+Profit: $379948.09 (sum of profit in year 1 and in year 2)
+
 
