@@ -11,6 +11,7 @@ The goal for this part is to illustrate the potential for targeting responses fo
 Graph:
 <br><br>
 <img src="images/sliec_dice_1.png"/>
+<br><br>
 Code:
 <br><br>
 
@@ -51,6 +52,7 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
 Graph:
 <br><br>
 <img src="images/slice_dice_2.png"/>
+<br><br>
 Code:
 <br><br>
 
@@ -80,6 +82,7 @@ ggplot(aes(fill=group,y=Purch,x=purchased_in_past,ymax=Purch+sePurch,ymin=Purch-
 Graph:
 <br><br>
 <img src="images/purchase.png"/>
+<br><br>
 Code:
 <br><br>
 
@@ -101,6 +104,7 @@ ggplot(aes(fill = group, x=past_purch_amount,y=Purch,ymax = Purch+sePurch,ymin=P
 Graph:
 <br><br>
 <img src="images/visit.png"/>
+<br><br>
 Code:
 <br><br>
 
