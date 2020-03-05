@@ -10,7 +10,10 @@ I had experience with getting insights from analyzing large datasets using multi
 
 [Project 1 Title](/sample_page)
 <img src="images/sliec_dice_1.png"/>
+<br><br>
+Grouped customers based on did they purchased Chard before. 
 <img src="images/slice_dice_2.png"/>
+Grouped customers based on when did they make their purchase behavior or their customer features.
 
 
 ---
