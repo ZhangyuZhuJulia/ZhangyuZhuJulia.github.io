@@ -127,6 +127,33 @@ ggplot(aes(fill = group, x=visit_frequency,y=Purch,ymax = Purch+sePurch,ymin=Pur
 
 The goal for this part is to build a causal forest model with all demographic characteristics, score each customer and decide to send an offer to which customer. 
 
-<img src="images/causal forest.png"/>
+```
+######################################## conditional effect #######################################  
+set.seed(1)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# drop outlier in chard (13379.440)
+d1 <- data[-57156,] # row number is 57156
+
+# causal forests (sample = 15000)
+data_forest = d1
+cf_size <- 15000; #nrow(d) 
+cf_set = sample(nrow(data_forest),cf_size)
+data_forest$email = (data_forest$group != "ctrl")
+
+treat <- data_forest$email
+response <- data_forest$purch
+baseline <- data_forest[,c("last_purch", "visits", "chard", "sav_blanc", "syrah", "cab", "past_purch")]
+tmp=proc.time()[3]
+cf <- causal_forest(baseline, response, treat)
+tmp = proc.time()[3]-tmp
+print(cf)
+
+## predicted uplift
+cust <- data.frame(d1$chard, d1$sav_blanc, d1$syrah, d1$cab, d1$last_purch, d1$visits, d1$past_purch)
+pre1 <- predict(cf, cust, estimate.variance = TRUE)
+pre1$score <- pre1$predictions*0.3-0.1 # Margin: 30%, Cost: 10 cents
+pre1$user_id <- d1$user_id
+target <- pre1[pre1$score > 0,]
+target_info <- d1[d1$user_id %in% target$user_id,]
+```
+
