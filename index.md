@@ -3,9 +3,9 @@
 ---
 
 ### Introduction
-I am currently pursuing Masters in Business Analytics at the University of Rochester. 
+I am currently pursuing Masters in Business Analytics at the University of Rochester. My training related to analytic filed during the program include: R Programming, Predictive Analytics with Python (Machine Learning), Causal Analytics with R (A/B Testing), Social Media Analytics (NLP), Data Management, Pricing Analytics, Analytics Design (TURF & Conjoint analysis) 
 <br><br>
-Had experience about get insights from analyze large datasets using multiple tools and building causal & predictive models to help address business problems. 
+I had experience with getting insights from analyzing large datasets using multiple tools and building causal & predictive models to help address business problems. 
 
 
 [Project 1 Title](/sample_page)
