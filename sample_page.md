@@ -7,11 +7,9 @@ set of customers; Examining the impact of an email that was intended to drive pu
 
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
-```javascript
-if (isAwesome){
-  return true
-}
-```
+<img src="slice_dice_1.png"/>
+<img src="slice_dice_2?raw=true"/>
+
 
 ### 2. Assess assumptions on which statistical inference will be based
 
