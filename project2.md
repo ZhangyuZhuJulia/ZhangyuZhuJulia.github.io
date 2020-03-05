@@ -41,7 +41,7 @@ Cluster Result:
 <br><br>
 <img src="images/project_2_1.png?raw=true"/>
 <br><br>
-code:
+Code:
 
 ```
 runClusts = function(toClust,nClusts,print=TRUE,maxClusts=15,seed=12345,nstart=20,iter.max=100){
@@ -67,7 +67,11 @@ runClusts(lm_result[2:5],c(2:4),print=TRUE,maxClusts=15,seed=12345,nstart=20,ite
 
 
 **3.priori segmentation**
-
+<br>
+Goal:
+<br>
+Conduct a priori segmentation using the variables gender and age in order to
+profile the attribute preferences based on these variables
 
 
 **4.Simulate market shares for different product-line scenarios**
