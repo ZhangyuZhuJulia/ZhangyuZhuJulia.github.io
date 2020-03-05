@@ -1,5 +1,5 @@
 title: Zhangyu Zhu # your name (or website title) here
-logo: <img width="200" alt="portfolio_view" src="/images/photo.png"> # your photo (or logo) here
+logo: ![test](/images/photo.png | width=48) # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Introduction 
   <br><br>
