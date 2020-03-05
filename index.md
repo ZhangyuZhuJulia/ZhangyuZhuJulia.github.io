@@ -1,16 +1,19 @@
-## Portfolio
+# Portfolio
 
 ---
 
-### Introduction
+## Self-Introduction
 I am currently pursuing Masters in Business Analytics at the University of Rochester. My training related to analytic filed during the program include: R Programming, Predictive Analytics with Python (Machine Learning), Causal Analytics with R (A/B Testing), Social Media Analytics (NLP), Data Management, Pricing Analytics, Analytics Design (TURF & Conjoint analysis) 
 <br><br>
 I had experience with getting insights from analyzing large datasets using multiple tools and building causal & predictive models to help address business problems. 
 
 
-[Email Marketing Experiments Project](/sample_page)
 
-#### Project description: 
+## Projects and Case Competition 
+
+### Project 1: 
+[Email Marketing Experiments Project](/sample_page)
+#### description: 
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
 
 #### Sample results: 
