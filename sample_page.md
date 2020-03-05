@@ -107,6 +107,7 @@ ggplot(aes(fill = group, x=past_purch_amount,y=Purch,ymax = Purch+sePurch,ymin=P
     geom_errorbar(position=dodge,width = 0.5)
 ```
 **Grouped customers based on visit frquency**
+<br><br>
 Graph:
 <br><br>
 <img src="images/visit.png"/>
