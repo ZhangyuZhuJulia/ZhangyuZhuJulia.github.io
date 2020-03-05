@@ -73,7 +73,7 @@ runClusts(lm_result[2:5],c(2:4),print=TRUE,maxClusts=15,seed=12345,nstart=20,ite
 Conduct a priori segmentation using the variables gender and age in order to profile the attribute preferences based on these variables. Then test whether these a priori segmentation variables affect the part-utilities. 
 <br>
 Identify the ideal product for the a priori segments and profile the segment-level attribute preferences if the differences are meaningful.
-<br>
+<br><br>
 Result Visualization:
 <br><br>
 <img src="images/project_2_2.png?raw=true"/>
