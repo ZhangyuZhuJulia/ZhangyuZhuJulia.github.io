@@ -216,7 +216,6 @@ market_share_2 = simFCScenarios(scens_2,d_data[2:17])[,c(4,5,8,13,14,16)]
 <img src="images/project_2_marketshare2.png?raw=true"/>
 
 **Calculate profit and choose the best scenarios combination**
-
 <br>
 Result:
 <br>
