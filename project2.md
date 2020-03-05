@@ -219,13 +219,13 @@ market_share_2 = simFCScenarios(scens_2,d_data[2:17])[,c(4,5,8,13,14,16)]
 <br>
 Result:
 <br>
-Assumption: The competitor won’t respond immediately.
+1. Assumption: The competitor won’t respond immediately.
 <br>
 Our best combination: 1.5% profile 5 and 88.5% profile 14.
 <br>
 Maximum Profit: $266,497
-<br>
-Assumption: The competitor respond by lower their price to $119.99.
+<br><br>
+2. Assumption: The competitor respond by lower their price to $119.99.
 <br>
 our best combination: profile 4 and profile 14
 <br>
