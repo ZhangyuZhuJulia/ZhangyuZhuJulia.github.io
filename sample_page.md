@@ -8,7 +8,13 @@ set of customers; Examining the impact of an email that was intended to drive pu
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
 <img src="images/sliec_dice_1.png"/>
+<br><br>
+Grouped customers based on did they purchased Chard before. 
+<br><br>
 <img src="images/slice_dice_2.png"/>
+<br><br>
+Grouped customers based on when did they make their purchase behavior or their customer features.
+
 
 
 ### 2. Assess assumptions on which statistical inference will be based
