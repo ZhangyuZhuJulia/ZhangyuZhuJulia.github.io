@@ -1,7 +1,6 @@
 ## Email Marketing Experiments Project
 
 ### Project description: 
-<br><br>
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader
 set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
 
@@ -11,6 +10,7 @@ set of customers; Examining the impact of an email that was intended to drive pu
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
 **Grouped customers based on their purchased products before**
+<br><br>
 Graph:
 <br><br>
 <img src="images/sliec_dice_1.png"/>
@@ -53,6 +53,7 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
 ```
 
 **Grouped customers based on when did they make their purchase behavior or their customer features**
+<br><br>
 Graph:
 <br><br>
 <img src="images/slice_dice_2.png"/>
@@ -83,6 +84,7 @@ ggplot(aes(fill=group,y=Purch,x=purchased_in_past,ymax=Purch+sePurch,ymin=Purch-
     geom_errorbar(position=dodge)
 ```
 **Grouped customers based on past purchase amount**
+<br><br>
 Graph:
 <br><br>
 <img src="images/purchase.png"/>
