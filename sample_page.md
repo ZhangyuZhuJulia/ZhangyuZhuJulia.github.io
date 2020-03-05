@@ -22,9 +22,11 @@ ggplot(aes(fill = group, x=anyChard,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePu
     geom_bar(position=dodge,stat="identity",width = 0.5)+
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
     geom_errorbar(position=dodge,width = 0.5)
-  ```
+  
+```
 <img src="images/sliec_dice_3.png"/>
 Code:
+
 ```
 # b. Sav  
 sav_blanc = 
