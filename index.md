@@ -27,9 +27,9 @@ Grouped customers based on when did they make their purchase behavior or their c
 
 ---
 ### Project 2:
-[Project 2 Title](/project2)
+[Conjoint Analysis](/project2)
 #### Description:
-Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis and customer segmentation method. 
+Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis as well as consider customer segmentation method to target customer better.
 #### Sample result:
 <img src="images/project_2_1.png?raw=true"/>
 
