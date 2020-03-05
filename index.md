@@ -9,6 +9,10 @@ I had experience with getting insights from analyzing large datasets using multi
 
 
 [Project 1 Title](/sample_page)
+
+Project description: Running email marketing experiments to evaluate offers prior to sending the offers to a broader set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
+
+Sample results: 
 <img src="images/sliec_dice_1.png"/>
 <br><br>
 Grouped customers based on did they purchased Chard before. 
