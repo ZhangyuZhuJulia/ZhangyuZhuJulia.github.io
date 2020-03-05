@@ -1,4 +1,4 @@
-## This can be your internal website page / project page
+## Email Marketing Experiments Project
 
 **Project description:** Running email marketing experiments to evaluate offers prior to sending the offers to a broader
 set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
@@ -13,21 +13,10 @@ Grouped customers based on did they purchased Chard before.
 Grouped customers based on when did they make their purchase behavior or their customer features.
 
 
+### 2. “Individual-level” Conditional Causal Effect Estimates
 
-### 2. Assess assumptions on which statistical inference will be based
+The goal for this part is to build a causal forest model with all demographic characteristics, score each customer and decide to send an offer to which customer. 
 
-```javascript
-if (isAwesome){
-  return true
-}
-```
-
-### 3. Support the selection of appropriate statistical tools and techniques
-
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
-
-### 4. Provide a basis for further data collection through surveys or experiments
-
-Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+<img src="images/causal forest.png"/>
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
