@@ -9,7 +9,7 @@ The goal for this part is to illustrate the potential for targeting responses fo
 
 #### Grouped customers based on their purchased products before. 
 <img src="images/sliec_dice_1.png"/>
-Code:
+Code
 ```
 a. Chard 
 chard = 
