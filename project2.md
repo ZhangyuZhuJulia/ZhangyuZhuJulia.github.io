@@ -113,3 +113,12 @@ gplot(data=plot, aes(x=`Product Attributes`, y=Effection, fill=Segments)) +
 ```
 
 **4.Simulate market shares for different product-line scenarios**
+<br><br>
+**Goal:**
+<br>
+Use disaggregate analysis with a first choice rule to forecast market shares. Calculate profitability for each product in the product line as well as the overall profitability for the firm.
+<br>
+Suggest the best possible product line strategy given considerations related to competitive response, cannibalization, profitability, and long-run performance. 
+<br><br>
+
+
