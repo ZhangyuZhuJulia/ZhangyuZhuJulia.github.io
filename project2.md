@@ -36,10 +36,11 @@ for (i in unique(full_data$ID)){
 ```
 
 **2. Conduct Benefit Segmentation via Cluster Analysis of Conjoint Part-Utilities**
+<br><br>
 Cluster Result:
-<b><b\>
+<br><br>
 <img src="images/project_2_1.png?raw=true"/>
-<b><b\>
+<br><br>
 code:
 
 ```
