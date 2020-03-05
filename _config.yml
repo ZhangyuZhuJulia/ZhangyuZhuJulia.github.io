@@ -3,11 +3,11 @@ logo: "/images/photo.png" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   First description 
   <br>
-  <a Currently pursuing Masters in Business Analytics at the University of Rochester. I have experience in different projects and case competition focusing get insights from analyze large datasets using multiple tools and building causal & predictive models. I am currently looking for jobs / Interns that focus on data analyzing works for business purposes using tools such as R, Python, SQL, and Tableau.></a> 
+  Currently pursuing Masters in Business Analytics at the University of Rochester. I have experience in different projects and case competition focusing get insights from analyze large datasets using multiple tools and building causal & predictive models. I am currently looking for jobs / Interns that focus on data analyzing works for business purposes using tools such as R, Python, SQL, and Tableau. 
   <br>
-  #Second description 
-  #<br><br>
-  #<a></a>
+  Second description 
+  <br><br>
+  <a></a>
   <a href="www.linkedin.com/in/zhangyuzhu">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
