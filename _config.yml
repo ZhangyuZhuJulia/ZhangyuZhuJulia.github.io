@@ -1,5 +1,5 @@
 title: Zhangyu Zhu # your name (or website title) here
-logo: "/images/photo.png"   # your photo (or logo) here
+logo: "/images/photo.png" = 24*48   # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
   Introduction 
   <br><br>
