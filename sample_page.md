@@ -39,28 +39,28 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
     geom_errorbar(position=dodge,width = 0.5)
 ```
+
 #### Grouped customers based on when did they make their purchase behavior or their customer features.
 <img src="images/slice_dice_2.png"/>
 Code:
+
 ```
-## 1) recent buyers vs. non-recent buyers: 
-# new column
+1) recent buyers vs. non-recent buyers: 
 data_slice_1 = data
-#
 data_slice_1$purchased_in_past = ifelse(data_slice_1$last_purch == 0 & data_slice_1$past_purch == 0, "new",
                                  ifelse(data_slice_1$last_purch != 0 & data_slice_1$past_purch == 0, "never purchased",
                                  ifelse(data_slice_1$last_purch <= 30 & data_slice_1$past_purch != 0, "30 days",
                                  ifelse(data_slice_1$last_purch <= 180 & data_slice_1$past_purch != 0 & data_slice_1$last_purch > 30, "30-180 days",
                                  ifelse(data_slice_1$last_purch <= 365 & data_slice_1$past_purch != 0 & data_slice_1$last_purch > 180, "180-365 days", "over a year"
                                   )))))
-#  summary 
+#summary 
 slice_1_avg_summary = 
     data_slice_1 %>% 
     group_by(group,purchased_in_past) %>%
     summarise(N = n(),Open = mean(open),Click = mean(click),Purch = mean(purch), 
               seOpen = sd(open)/sqrt(N),seClick = sd(click)/sqrt(N), sePurch = sd(purch)/sqrt(N))
 
-# plot
+#plot
 ggplot(aes(fill=group,y=Purch,x=purchased_in_past,ymax=Purch+sePurch,ymin=Purch-sePurch),data=slice_1_avg_summary)+
     geom_bar(position=dodge,stat="identity") + 
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
