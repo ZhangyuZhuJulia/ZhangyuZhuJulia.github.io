@@ -1,15 +1,16 @@
 ## Email Marketing Experiments Project
 
-**Project description:** 
+### Project description: 
 <br><br>
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader
 set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
 
-### 1. Slice and dice analysis
+### Procedures:
+**1. Slice and dice analysis** 
 
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
-#### Grouped customers based on their purchased products before. 
+**Grouped customers based on their purchased products before**
 Graph:
 <br><br>
 <img src="images/sliec_dice_1.png"/>
@@ -51,7 +52,7 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
     geom_errorbar(position=dodge,width = 0.5)
 ```
 
-#### Grouped customers based on when did they make their purchase behavior or their customer features.
+**Grouped customers based on when did they make their purchase behavior or their customer features**
 Graph:
 <br><br>
 <img src="images/slice_dice_2.png"/>
@@ -81,7 +82,7 @@ ggplot(aes(fill=group,y=Purch,x=purchased_in_past,ymax=Purch+sePurch,ymin=Purch-
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-1.6)+
     geom_errorbar(position=dodge)
 ```
-#### Grouped customers based on past purchase amount
+**Grouped customers based on past purchase amount**
 Graph:
 <br><br>
 <img src="images/purchase.png"/>
@@ -103,7 +104,7 @@ ggplot(aes(fill = group, x=past_purch_amount,y=Purch,ymax = Purch+sePurch,ymin=P
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-2.5)+
     geom_errorbar(position=dodge,width = 0.5)
 ```
-#### Grouped customers based on visit frquency
+**Grouped customers based on visit frquency**
 Graph:
 <br><br>
 <img src="images/visit.png"/>
@@ -125,7 +126,7 @@ ggplot(aes(fill = group, x=visit_frequency,y=Purch,ymax = Purch+sePurch,ymin=Pur
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-2.5)+
     geom_errorbar(position=dodge,width = 0.5)
 ```
-### 2. “Individual-level” Conditional Causal Effect Estimates
+**2. “Individual-level” Conditional Causal Effect Estimates**
 
 The goal for this part is to build a causal forest model with all demographic characteristics, score each customer and decide to send an offer to which customer. 
 
