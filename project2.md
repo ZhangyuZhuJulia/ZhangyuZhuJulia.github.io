@@ -38,9 +38,9 @@ for (i in unique(full_data$ID)){
 **2. Conduct Benefit Segmentation via Cluster Analysis of Conjoint Part-Utilities**
 <br><br>
 Cluster Result:
-<br><br>
+<br>
 <img src="images/project_2_1.png?raw=true"/>
-<br><br>
+<br>
 Code:
 
 ```
@@ -67,11 +67,48 @@ runClusts(lm_result[2:5],c(2:4),print=TRUE,maxClusts=15,seed=12345,nstart=20,ite
 
 
 **3.priori segmentation**
-<br>
+<br><br>
 Goal:
 <br>
-Conduct a priori segmentation using the variables gender and age in order to
-profile the attribute preferences based on these variables
+Conduct a priori segmentation using the variables gender and age in order to profile the attribute preferences based on these variables. Then test whether these a priori segmentation variables affect the part-utilities. 
+<br>
+Identify the ideal product for the a priori segments and profile the segment-level attribute preferences if the differences are meaningful.
+<br>
+Result Visualization:
+<img src="images/project_2_1.png?raw=true"/>
+<br>
+Code:
 
+```
+# regressino result extract for four segments
+
+four_lm_result = data.frame(segments = c("a1g1","a1g0","a0g1","a0g0"))
+for (i in c(1:0)){
+  for (k in c(1:0)){
+    lm = lm(ratings ~ .-ID - profile, data = c_data[c_data$age == i & c_data$gender == k,])
+    coe = summary(lm) 
+    four_lm_result[four_lm_result$segments == name, 2:6] = coe[["coefficients"]]
+  }
+}
+
+# data frame used for plot 
+col_name = c("`139.99`" , "`18 inches`", "Bouncing" ,"Racing") 
+plot = data.frame(segments = rep(unique(four_lm_result$segments),each = 4),coe = rep(col_name,4),fill = c(1:16))
+a = 0
+for (i in unique(plot$segments)){
+  for(k in c(1:4)){
+    plot$fill[a+k] = as.numeric(four_lm_result[four_lm_result$segments == i,k+2])
+  }
+  a = a + 4
+}
+
+# plot graph
+colnames(plot) = c("Segments","Product Attributes","Effection")
+gplot(data=plot, aes(x=`Product Attributes`, y=Effection, fill=Segments)) +
+  geom_bar(stat="identity", position=position_dodge())+
+  scale_fill_brewer(palette="Paired") +
+  geom_text(aes(label=round(as.double(Effection),2)),position=position_dodge(0.9),vjust=-0.5)
+
+```
 
 **4.Simulate market shares for different product-line scenarios**
