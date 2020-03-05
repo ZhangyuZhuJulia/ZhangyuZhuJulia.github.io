@@ -13,7 +13,7 @@ I had experience with getting insights from analyzing large datasets using multi
 
 ### Project 1: 
 [Email Marketing Experiments Project](/sample_page)
-#### description: 
+#### Description: 
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
 
 #### Sample results: 
@@ -25,10 +25,13 @@ Grouped customers based on did they purchased Chard before.
 <br><br>
 Grouped customers based on when did they make their purchase behavior or their customer features.
 
-
 ---
-[Project 2 Title](/pdf/sample_presentation.pdf)
-<img src="images/dummy_thumbnail.jpg?raw=true"/>
+### Project 2:
+[Project 2 Title](/project2)
+#### Description:
+Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis and customer segmentation method. 
+#### Sample result:
+<img src="images/project_2_1.png?raw=true"/>
 
 ---
 [Project 3 Title](http://example.com/)
