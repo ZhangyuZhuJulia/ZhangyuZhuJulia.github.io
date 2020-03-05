@@ -130,5 +130,84 @@ Use disaggregate analysis with a first choice rule to forecast market shares. Ca
 <br>
 Suggest the best possible product line strategy given considerations related to competitive response, cannibalization, profitability, and long-run performance. 
 <br><br>
+Code:
+```
+# Prepare Data
+d_data = data.frame(ID = c(1:200))
+for (i in c(1:200)){
+  for (k in c(1:16)){
+    d_data[i,k+1] = c_data$ratings[c_data$ID == i & c_data$profile == k]
+    names(d_data)[k+1] = paste0("profile_",k)
+  }
+}
+# Create Functions
+simFCDecisions = function(scen,data){
+  inmkt = data[,scen] #construct the subsetted matrix of options
+  bestOpts = apply(inmkt,1,max) #identify which option is best = max
+  ret = inmkt
+  for (i in c(1:nrow(inmkt))){
+    for(k in c(1:length(inmkt)))
+      if(inmkt[i,k] == bestOpts[i]){
+        ret[i,k] = 1
+      }
+    else{
+      ret[i,k] = 0
+    }
+  }
+  names(ret) = names(inmkt)
+  ret
+}
 
+calcUnitShares = function(decisions){
+  colSums(decisions)/sum(decisions) #assumes that total decisions is market size
+}
+
+simFCShares=function(scen,data){
+  decs = simFCDecisions(scen,data) #determine decisions
+  calcUnitShares(decs) #calculate shares and return
+}
+
+simFCScenarios = function(scenarios,data,...){
+  res = matrix(nrow=length(scenarios),ncol=length(data)) #sets everything to NA by default
+  for(i in 1:length(scenarios)){ ##loop over scenarios
+    res[i, scenarios[[i]] ] = simFCShares(scenarios[[i]],data,...)##  calculate market shares and save to right columns in res for the scenario
+  }
+  res = as.data.frame(res); 
+  names(res) = names(data)
+  res ##return result table
+}
+
+# for short term effection -- assume competitor does not responses
+scens = list()
+scens[[1]]=c(13,5,7)
+scens[[2]]=c(13,4,7)
+scens[[3]]=c(13,14,7)
+scens[[4]]=c(13,16,7)
+scens[[5]]=c(5,4,7)
+scens[[6]]=c(5,14,7)
+scens[[7]]=c(5,16,7)
+scens[[8]]=c(14,4,7)
+scens[[9]]=c(14,16,7)
+scens[[10]]=c(16,4,7)
+market_share = simFCScenarios(scens,d_data[2:17])[,c(4,5,7,13,14,16)]
+```
+<img src="images/project_2_marketshare1.png?raw=true"/>
+
+```
+# for longer term -- assume competitor responses
+scens_2 = list()
+scens_2[[1]]=c(13,5,8)
+scens_2[[2]]=c(13,4,8)
+scens_2[[3]]=c(13,14,8)
+scens_2[[4]]=c(13,16,8)
+scens_2[[5]]=c(5,4,8)
+scens_2[[6]]=c(5,14,8)
+scens_2[[7]]=c(5,16,8)
+scens_2[[8]]=c(14,4,8)
+scens_2[[9]]=c(14,16,8)
+scens_2[[10]]=c(16,4,8)
+market_share_2 = simFCScenarios(scens_2,d_data[2:17])[,c(4,5,8,13,14,16)]
+
+```
+<img src="images/project_2_marketshare2.png?raw=true"/>
 
