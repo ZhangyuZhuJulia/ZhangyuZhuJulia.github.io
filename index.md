@@ -3,10 +3,9 @@
 ---
 
 ### Introduction
-  <br><br>
-  Currently pursuing Masters in Business Analytics at the University of Rochester. 
-  <br><br>
-  Had experience about get insights from analyze large datasets using multiple tools and building causal & predictive models to help address business problems. 
+I am currently pursuing Masters in Business Analytics at the University of Rochester. 
+<br><br>
+Had experience about get insights from analyze large datasets using multiple tools and building causal & predictive models to help address business problems. 
 
 
 [Project 1 Title](/sample_page)
