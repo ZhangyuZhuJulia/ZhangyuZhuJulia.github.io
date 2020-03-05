@@ -1,12 +1,10 @@
 title: Zhangyu Zhu # your name (or website title) here
 logo: "/images/photo.png" # your photo (or logo) here
 description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description 
-  <br>
-  <br>
-  Second description 
+  Introduction 
+  Currently pursuing Masters in Business Analytics at the University of Rochester. 
+  Had experience about get insights from analyze large datasets using multiple tools and building causal & predictive models to help address business problems. 
   <br><br>
-  <a></a>
   <a href="http://www.linkedin.com/in/zhangyuzhu">View My LinkedIn Profile</a> 
   
 theme: jekyll-theme-minimal
