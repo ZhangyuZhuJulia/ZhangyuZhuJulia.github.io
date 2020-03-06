@@ -31,6 +31,8 @@ Grouped customers based on when did they make their purchase behavior or their c
 #### Description:
 Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis as well as consider customer segmentation method to target customer better.
 #### Sample result:
+Cluster Result:
+<br>
 <img src="images/project2_sample.png?raw=true"/>
 
 ---
