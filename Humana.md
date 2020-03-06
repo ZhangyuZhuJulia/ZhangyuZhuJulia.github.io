@@ -26,10 +26,10 @@ for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
 * **some of the new variables we created**
-* new day 0 date
+1. new day 0 date
 <br> reason to create this variable: 
 <br> each patient may have multiple day 0, which represent the begining of a new 6 months period. If a patient did not take any pill for past 90 days, and the next day that he/she starts taking pill is the new day 0. We need identify all qualified day 0 for each patient in order to count have many days this patient has been taking pills within a 6 months period.
-<br><br> Code:
+<br>Code:
 ```
 if(length(thisID$row_num)>=2){
   for (j in 2:max(thisID$row_num)){
@@ -43,6 +43,56 @@ else{
     }
 full_data$new_day_0_date[full_data$id==i] = thisID$new_day_0_date 
 
+```
+2. new time line
+<br> reason to create this variable: 
+<br> Because each patient can have multiple day 0 which means they have multiple 6 months period need to be evaluated. In order to avoid mis-calculation between each period, we created a new variable called new time line. This number represents which period this specific record belongs to.  
+<br>Code:
+```
+if(length(thisID$row_num)>=2){ 
+  thisID$new_time_line[1] <- 0
+  for (j in 2:max(thisID$row_num)){
+     ifelse(is.na(thisID$new_day_0_date[thisID$row_num == j]),
+            thisID$new_time_line[thisID$row_num == j] <- thisID$new_time_line[thisID$row_num == j-1],
+            thisID$new_time_line[thisID$row_num == j] <- thisID$new_day_0_date[thisID$row_num == j])
+    }}
+else{
+    thisID$new_time_line[1] <- 0
+    }
+full_data$new_time_line[full_data$id==i] = thisID$new_time_line 
+```
+
+3. available day
+<br> reason to create this variable:
+<br> This variable represent the cummulative amount of days this patient has been taking the pill within this 6 months period. 
+<br>Code:
+```
+########################### available date #############################
+if(length(thisID$row_num)>=2){
+  for (j in 2:max(thisID$row_num)){  
+    ifelse(thisID$over[thisID$row_num == j] == 0,
+       ifelse(thisID$new_time_line[thisID$row_num == j] != thisID$new_time_line[thisID$row_num == j-1],
+              thisID$available_day[thisID$row_num == j] <- thisID$PAY_DAY_SUPPLY_CNT[thisID$row_num == j],
+              ifelse(thisID$end_day[thisID$row_num == j] < thisID$max_end_date[thisID$row_num == j],
+                     thisID$available_day[thisID$row_num == j] <- thisID$available_day[thisID$row_num == j-1],
+                     ifelse(thisID$new_day[thisID$row_num == j] > thisID$max_end_date[thisID$row_num == j-1],
+                            thisID$available_day[thisID$row_num == j] <- 
+                              thisID$available_day[thisID$row_num == j-1] + 
+                              thisID$PAY_DAY_SUPPLY_CNT[thisID$row_num == j],
+                            thisID$available_day[thisID$row_num == j] <- 
+                              thisID$available_day[thisID$row_num == j-1] + 
+                              thisID$end_day[thisID$row_num == j]-thisID$max_end_date[thisID$row_num == j-1]))),
+       ifelse(thisID$over[thisID$row_num == j] != thisID$over[thisID$row_num == j-1] & thisID$new_day[thisID$row_num == j] < thisID$current_period_end_date[thisID$row_num == j],
+              ifelse(thisID$new_day[thisID$row_num == j] > thisID$max_end_date[thisID$row_num == j-1],
+                     thisID$available_day[thisID$row_num == j] <- thisID$available_day[thisID$row_num == j-1] + 
+thisID$current_period_end_date[thisID$row_num == j]-thisID$new_day[thisID$row_num == j]+1,
+                     thisID$available_day[thisID$row_num == j] <- thisID$available_day[thisID$row_num == j-1] + thisID$current_period_end_date[thisID$row_num == j]-thisID$max_end_date[thisID$row_num == j-1]),
+              thisID$available_day[thisID$row_num == j] <- NA))
+    }}
+else{
+  thisID$available_day[1] <- thisID$PAY_DAY_SUPPLY_CNT[1]
+    }
+full_data$available_day[full_data$id==i] = thisID$available_day 
 ```
 
 
