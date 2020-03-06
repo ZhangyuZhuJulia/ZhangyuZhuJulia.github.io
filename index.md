@@ -13,7 +13,7 @@ Other than what I have learned from courses, I also experienced multiples case c
 [Email Marketing Experiments Project](/sample_page)
 #### Description: 
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective.
-<br> Getting insight from data to determine different potential market segmentation methods and decide hat kind of customer to target with the email campaign.
+<br> Getting insight from data to determine different potential market segmentation methods and decide what kind of customer to target with the email campaign.
 
 #### Sample results: 
 Grouped customers based on did they purchased Chard before. 
