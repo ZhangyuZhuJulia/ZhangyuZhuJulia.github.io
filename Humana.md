@@ -99,7 +99,7 @@ full_data$available_day[full_data$id==i] = thisID$available_day
 Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months period, then this patient is defined as Long Term Opioid Therapy (LTOT). 
 
 2. **Building the model**<br>
-a. We seperate the whole data as 80% of it become trainng dataset and 20% of it become validation dataset.
+a. We seperate the whole data as 80% of it become trainng dataset and 20% of it become validation dataset.<br>
 b. We defined function getDetailRMSE to help evaluete the model by compare the RMSE got from each model.
 ```
 ################################################# predictive model ########################################################
@@ -121,5 +121,13 @@ c. the best model we picked is a random forest model.
 library('randomForest')
 RandomForest_model6 <- randomForest(LTOT~ days+PAY_DAY_SUPPLY_CNT + PAYABLE_QTY + MME + QTY_PER_DAY + days:PAY_DAY_SUPPLY_CNT + days:MME + days:QTY_PER_DAY + PAY_DAY_SUPPLY_CNT:PAYABLE_QTY  + PAYABLE_QTY:MME + PAYABLE_QTY:QTY_PER_DAY,data = data4, mtry=5.25) 
 ```
-d.
+d. use the model we selected, we made the prediction and substract all patient that are eligable for LTOT
+```
+###################### prediction  #########################
+result_table <- data.frame(ID = c(1:5984),predicted_value = c(1:5984))
+for (i in unique(HMAHCC_HOLDOUT$ID)) {
+  thisID = subset(detailValid,ID==i)
+  thisID$predicted_value <- predict(randomForest(LTOT~ days+PAY_DAY_SUPPLY_CNT + PAYABLE_QTY + MME + DRUG_TYPE + EVENT_DESCR + QTY_PER_DAY + days:PAY_DAY_SUPPLY_CNT + days:MME + days:QTY_PER_DAY + PAY_DAY_SUPPLY_CNT:PAYABLE_QTY  + PAYABLE_QTY:MME + PAYABLE_QTY:QTY_PER_DAY,data = data4, mtry=5.25),thisID)
+  detailValid$predicted_value[detailValid$ID==i] = thisID$predicted_value
+}
 ```
