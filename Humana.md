@@ -99,4 +99,27 @@ full_data$available_day[full_data$id==i] = thisID$available_day
 Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months period, then this patient is defined as Long Term Opioid Therapy (LTOT). 
 
 2. **Building the model**<br>
+a. We seperate the whole data as 80% of it become trainng dataset and 20% of it become validation dataset.
+b. We defined function getDetailRMSE to help evaluete the model by compare the RMSE got from each model.
+```
+################################################# predictive model ########################################################
 
+isTraining = runif(nrow(data4))<.8  
+detailTrain = subset(data4,isTraining)
+detailValid = subset(data4,!isTraining)
+
+#Function returns the RMSE using the validation set for the detailing data
+getDetailRMSE = function(model){
+  actualY = detailValid$LTOT
+  predictedY = predict(model,detailValid)
+  return(mean((actualY-predictedY)^2)^.5)
+}
+```
+c. the best model we picked is a random forest model.
+```
+###################### best model selected  #########################
+library('randomForest')
+RandomForest_model6 <- randomForest(LTOT~ days+PAY_DAY_SUPPLY_CNT + PAYABLE_QTY + MME + QTY_PER_DAY + days:PAY_DAY_SUPPLY_CNT + days:MME + days:QTY_PER_DAY + PAY_DAY_SUPPLY_CNT:PAYABLE_QTY  + PAYABLE_QTY:MME + PAYABLE_QTY:QTY_PER_DAY,data = data4, mtry=5.25) 
+```
+d.
+```
