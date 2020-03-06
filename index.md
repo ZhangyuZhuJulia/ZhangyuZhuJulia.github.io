@@ -9,7 +9,13 @@ Other than what I have learned from courses, I also experienced multiples case c
 
 ## Projects and Case Competition 
 
-### Project 1: 
+### Project 1:
+[Humana-Mays 2019 Healthcare Analytics Case Competition](/Humana)
+#### Description:
+Analyze 7 million medical records of 20,000 patients provided by Humana to create a model aim at predict if members will continue opioid therapy six months after initial prescribing. Provide insights and suggestions to help identify members at risk for continued long term use of opioid therapies allowing for early intervention
+
+
+### Project 2: 
 [Email Marketing Experiments Project](/sample_page)
 #### Description: 
 Running email marketing experiments to evaluate offers prior to sending the offers to a broader set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective.
@@ -26,7 +32,7 @@ Grouped customers based on when did they make their purchase behavior or their c
 <br><br>
 
 ---
-### Project 2:
+### Project 3:
 [Conjoint Analysis](/project2)
 #### Description:
 Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis as well as consider customer segmentation method to target customer better.
