@@ -26,7 +26,7 @@ for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
 * **some of the new variables we created**
-1. new day 0 date
+a. new day 0 date
 <br> reason to create this variable: 
 <br> each patient may have multiple day 0, which represent the begining of a new 6 months period. If a patient did not take any pill for past 90 days, and the next day that he/she starts taking pill is the new day 0. We need identify all qualified day 0 for each patient in order to count have many days this patient has been taking pills within a 6 months period.
 <br>Code:
@@ -44,7 +44,7 @@ else{
 full_data$new_day_0_date[full_data$id==i] = thisID$new_day_0_date 
 
 ```
-2. new time line
+b. new time line
 <br> reason to create this variable: 
 <br> Because each patient can have multiple day 0 which means they have multiple 6 months period need to be evaluated. In order to avoid mis-calculation between each period, we created a new variable called new time line. This number represents which period this specific record belongs to.  
 <br>Code:
@@ -62,7 +62,7 @@ else{
 full_data$new_time_line[full_data$id==i] = thisID$new_time_line 
 ```
 
-3. available day
+c. available day
 <br> reason to create this variable:
 <br> This variable represent the cummulative amount of days this patient has been taking the pill within this 6 months period. 
 <br>Code:
@@ -95,5 +95,5 @@ else{
 full_data$available_day[full_data$id==i] = thisID$available_day 
 ```
 
-
-
+* **label patients**
+Use t
