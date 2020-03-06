@@ -15,7 +15,7 @@ Defined as not having an opioid ‘on hand’ in the preceding 90 day period, ba
 Defined as continuous use of an opioid medication with 90% of days covered over a 6 month period
 
 ### Procedures:
-1. Data prepartion<br>
+1. **Data prepartion**<br>
 * **Getting insights from large and un-organized dataset**<br>
 Because this case is deeply involved with large amount of medical and healthcare knowledges and backgraounds, what we did first is understand the data deeply and find relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
@@ -95,5 +95,8 @@ else{
 full_data$available_day[full_data$id==i] = thisID$available_day 
 ```
 
-* **label patients**
-Use t
+* **label patients** <br>
+Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months period, then this patient is defined as Long Term Opioid Therapy (LTOT). 
+
+2. **Building the model**<br>
+
