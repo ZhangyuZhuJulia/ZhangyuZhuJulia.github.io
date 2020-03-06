@@ -20,15 +20,16 @@ Defined as continuous use of an opioid medication with 90% of days covered over 
 Because this case is deeply involved with large amount of medical and healthcare knowledges and backgraounds, what we did first is understand the data deeply and find relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
 After understand the logic and variables provided in the dataset, we combined variables to generate new information that will help build the prediction model and clean the data to prepare for building the model <br>
-<br> Create subset for each ID
+<br> * Create subset for each ID:
 ```
 for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
 * **some of the new variables we created**
 * new day 0 date
-<br> reason to create this variable: each patient may have multiple day 0, which represent the begining of a new 6 months period. If a patient did not take any pill for past 90 days, and the next day that he/she starts taking pill is the new day 0. We need identify all qualified day 0 for each patient in order to count have many days this patient has been taking pills within a 6 months period.
-<br> code:
+<br> reason to create this variable: 
+<br> each patient may have multiple day 0, which represent the begining of a new 6 months period. If a patient did not take any pill for past 90 days, and the next day that he/she starts taking pill is the new day 0. We need identify all qualified day 0 for each patient in order to count have many days this patient has been taking pills within a 6 months period.
+<br><br> Code:
 ```
 if(length(thisID$row_num)>=2){
   for (j in 2:max(thisID$row_num)){
