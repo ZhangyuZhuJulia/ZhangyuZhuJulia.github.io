@@ -7,7 +7,7 @@ Analyze 7 million medical records of 20,000 patients provided by Humana to creat
 
 1. Data prepartion<br>
 
-* Getting Insights from Large and un-organized dataset<br>
+* **Getting Insights from Large and un-organized dataset**<br>
 Because this case is deeply involved with large amount of medical and healthcare knowledges and backgraounds, what we did first is understand the data deeply and find relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result and combine variables to generate new information that will help build the prediction model <br>
 
