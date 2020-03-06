@@ -218,16 +218,16 @@ market_share_2 = simFCScenarios(scens_2,d_data[2:17])[,c(4,5,8,13,14,16)]
 - Calculate profit and choose the best scenarios combination<br><br>
 
 1.Short-term:<br>
-The competitor won’t respond immediately.
+  The competitor won’t respond immediately.
 <br>
-Our best combination: profile 5 and profile 14.
+  Our best combination: profile 5 and profile 14.
 <br>
-Profit: $266,497
+  Profit: $266,497
 <br><br>
-2.Long-Term:
+  2.Long-Term:
 <br>
-The competitor respond by lower their price to $119.99.
+  The competitor respond by lower their price to $119.99.
 <br>
-Our best combination: profile 4 and profile 14
+  Our best combination: profile 4 and profile 14
 <br>
-Profit: $379948.09 (sum of profit in year 1 and in year 2)
+  Profit: $379948.09 (sum of profit in year 1 and in year 2)
