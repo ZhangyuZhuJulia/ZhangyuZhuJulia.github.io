@@ -22,7 +22,7 @@ Running email marketing experiments to evaluate offers prior to sending the offe
 <br><br>
 Grouped customers based on did they purchased Chard before. 
 <br><br>
-<img src="images/slice_dice_2.png"/>
+<img src="images/slice_dice.png"/>
 <br><br>
 Grouped customers based on when did they make their purchase behavior or their customer features.
 
