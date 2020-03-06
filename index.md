@@ -14,6 +14,7 @@ Other than what I have learned from courses, I also experienced multiples case c
 #### Description:
 Analyze 7 million medical records of 20,000 patients provided by Humana to create a model aim at predict if members will continue opioid therapy six months after initial prescribing. Provide insights and suggestions to help identify members at risk for continued long term use of opioid therapies allowing for early intervention
 
+---
 
 ### Project 2: 
 [Email Marketing Experiments Project](/sample_page)
