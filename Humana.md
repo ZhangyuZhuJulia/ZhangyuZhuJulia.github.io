@@ -15,7 +15,7 @@ Defined as not having an opioid ‘on hand’ in the preceding 90 day period, ba
 Defined as continuous use of opioid medication with 90% of days covered over 6 months
 
 ### Procedures:
-1. **Data prepartion**<br>
+1. **Data prepartion**<br><br>
 * **Getting insights from large and un-organized dataset**<br>
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
