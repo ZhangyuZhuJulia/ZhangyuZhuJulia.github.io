@@ -25,11 +25,12 @@ After understand the logic and variables provided in the dataset, we combined va
 for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
-* **some of the new variables we created**
+* **some of the new variables we created**<br>
 a. new day 0 date
 <br> reason to create this variable: 
 <br> each patient may have multiple day 0, which represent the begining of a new 6 months period. If a patient did not take any pill for past 90 days, and the next day that he/she starts taking pill is the new day 0. We need identify all qualified day 0 for each patient in order to count have many days this patient has been taking pills within a 6 months period.
 <br>Code:
+
 ```
 if(length(thisID$row_num)>=2){
   for (j in 2:max(thisID$row_num)){
@@ -48,6 +49,7 @@ b. new time line
 <br> reason to create this variable: 
 <br> Because each patient can have multiple day 0 which means they have multiple 6 months period need to be evaluated. In order to avoid mis-calculation between each period, we created a new variable called new time line. This number represents which period this specific record belongs to.  
 <br>Code:
+
 ```
 if(length(thisID$row_num)>=2){ 
   thisID$new_time_line[1] <- 0
@@ -66,6 +68,7 @@ c. available day
 <br> reason to create this variable:
 <br> This variable represent the cummulative amount of days this patient has been taking the pill within this 6 months period. 
 <br>Code:
+
 ```
 ########################### available date #############################
 if(length(thisID$row_num)>=2){
@@ -101,6 +104,7 @@ Use the available day we calculated to label patients. If the patient has been t
 2. **Building the model**<br>
 a. We seperate the whole data as 80% of it become trainng dataset and 20% of it become validation dataset.<br>
 b. We defined function getDetailRMSE to help evaluete the model by compare the RMSE got from each model.
+
 ```
 ################################################# predictive model ########################################################
 
@@ -116,6 +120,7 @@ getDetailRMSE = function(model){
 }
 ```
 c. the best model we picked is a random forest model.
+
 ```
 ###################### best model selected  #########################
 library('randomForest')
