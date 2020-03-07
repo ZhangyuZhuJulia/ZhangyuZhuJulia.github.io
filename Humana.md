@@ -1,7 +1,7 @@
 ## Humana-Mays 2019 Healthcare Analytics Case Competition 
 
 ### Case Description:
---
+---
 ### Case Description:
 Analyze 7 million medical records of 20,000 patients provided by Humana to create a model aim to predict if members will continue opioid therapy six months after initial prescribing. Provide insights and suggestions to help identify members at risk for continued long term use of opioid therapies allowing for early intervention
 
