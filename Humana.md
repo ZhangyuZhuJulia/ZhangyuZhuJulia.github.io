@@ -16,7 +16,7 @@ Defined as continuous use of opioid medication with 90% of days covered over 6 m
 
 ### Procedures:
 1. **Data prepartion**<br><br>
-* **Getting insights from large and un-organized dataset**<br>
+#### Getting insights from large and un-organized dataset
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
 After understanding the logic and variables provided in the dataset, we combined variables to generate new information that will help build the prediction model and clean the data to prepare for building the model <br>
@@ -25,7 +25,7 @@ After understanding the logic and variables provided in the dataset, we combined
 for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
-* **some of the new variables we created**
+#### some of the new variables we created
 <br>
 a. new day 0 date
 <br> reason to create this variable: 
