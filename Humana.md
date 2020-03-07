@@ -107,9 +107,9 @@ full_data$available_day[full_data$id==i] = thisID$available_day
 **3) label patients** <br>
 Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months, then this patient is defined as Long Term Opioid Therapy (LTOT). 
 
-**Step 2. Building the model**<br><br>
+**Step 2. Building the model**<br>
 
-1)We separate the whole data as 80% of it become training dataset and 20% of it become validation dataset<br>
+1)We separate the whole data as 80% of it become training dataset and 20% of it become validation dataset<br><br>
 2)We defined function getDetailRMSE to help evaluate the model by comparing the RMSE got from each model.
 
 ```
