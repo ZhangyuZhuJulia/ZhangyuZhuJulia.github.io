@@ -15,8 +15,9 @@ Defined as not having an opioid ‘on hand’ in the preceding 90 day period, ba
 Defined as continuous use of opioid medication with 90% of days covered over 6 months
 
 ### Procedures:
-1. **Data prepartion**<br><br>
-#### Getting insights from large and un-organized dataset
+1. **Data prepartion**<br>
+--- 
+**a. Getting insights from large and un-organized dataset**
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
 After understanding the logic and variables provided in the dataset, we combined variables to generate new information that will help build the prediction model and clean the data to prepare for building the model <br>
@@ -25,8 +26,8 @@ After understanding the logic and variables provided in the dataset, we combined
 for(i in unique(full_data$id)){
   thisID = subset(full_data,id==i)
 ```
-#### some of the new variables we created
-<br>
+**b. some of the new variables we created**
+<br><br>
 a. new day 0 date
 <br> reason to create this variable: 
 <br> each patient may have multiple days 0, which represents the beginning of a new 6 months period. If a patient did not take any pill for the past 90 days, and the next day that he/she starts taking a pill is the new day 0. We need to identify all qualified day 0 for each patient to count have many days this patient has been taking pills within 6 months.
@@ -99,10 +100,11 @@ else{
 full_data$available_day[full_data$id==i] = thisID$available_day 
 ```
 
-* **label patients** <br>
+**c. label patients** <br>
 Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months, then this patient is defined as Long Term Opioid Therapy (LTOT). 
 
-2. **Building the model**<br>
+2. **Building the model**<br><br>
+
 a. We separate the whole data as 80% of it become training dataset and 20% of it become validation dataset.<br>
 b. We defined function getDetailRMSE to help evaluate the model by comparing the RMSE got from each model.
 
