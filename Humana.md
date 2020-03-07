@@ -20,7 +20,7 @@ Defined as continuous use of opioid medication with 90% of days covered over 6 m
 
 ### Procedures:
 --- 
-**1. Data prepartion**<br><br>
+**Step 1. Data prepartion**<br><br>
 **1). Getting insights from large and un-organized dataset**<br>
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br>
@@ -107,10 +107,10 @@ full_data$available_day[full_data$id==i] = thisID$available_day
 **3) label patients** <br>
 Use the available day we calculated to label patients. If the patient has been taking pills for more the 90% of the time during the 6 months, then this patient is defined as Long Term Opioid Therapy (LTOT). 
 
-**2. Building the model**<br><br>
+**Step 2. Building the model**<br><br>
 
-a. We separate the whole data as 80% of it become training dataset and 20% of it become validation dataset.<br>
-b. We defined function getDetailRMSE to help evaluate the model by comparing the RMSE got from each model.
+1)We separate the whole data as 80% of it become training dataset and 20% of it become validation dataset<br>
+2)We defined function getDetailRMSE to help evaluate the model by comparing the RMSE got from each model.
 
 ```
 ################################################# predictive model ########################################################
@@ -126,14 +126,14 @@ getDetailRMSE = function(model){
   return(mean((actualY-predictedY)^2)^.5)
 }
 ```
-c. the best model we picked is a random forest model.
+3)the best model we picked is a random forest model.
 
 ```
 ###################### best model selected  #########################
 library('randomForest')
 RandomForest_model6 <- randomForest(LTOT~ days+PAY_DAY_SUPPLY_CNT + PAYABLE_QTY + MME + QTY_PER_DAY + days:PAY_DAY_SUPPLY_CNT + days:MME + days:QTY_PER_DAY + PAY_DAY_SUPPLY_CNT:PAYABLE_QTY  + PAYABLE_QTY:MME + PAYABLE_QTY:QTY_PER_DAY,data = data4, mtry=5.25) 
 ```
-d. use the model we selected, we made the prediction and subtract all patient that are eligible for LTOT
+4)use the model we selected, we made the prediction and subtract all patient that are eligible for LTOT
 
 ```
 ###################### prediction  #########################
