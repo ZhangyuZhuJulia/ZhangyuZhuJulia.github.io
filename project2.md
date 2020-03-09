@@ -1,7 +1,7 @@
 ## Conjoint Analysis 
 
 ### Project description:
-Aim at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing conjoint analysis and customer segmentation method.
+Aimed at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis as well as consider the customer segmentation method to target customers better.
 
 ### Procedures:
 **1.Preprocessed data: change data format and impute missing value**
@@ -70,9 +70,9 @@ runClusts(lm_result[2:5],c(2:4),print=TRUE,maxClusts=15,seed=12345,nstart=20,ite
 <br><br>
 **Goal:**
 <br>
-Conduct a priori segmentation using the variables gender and age in order to profile the attribute preferences based on these variables. Then test whether these a priori segmentation variables affect the part-utilities. 
+Conduct a priori segmentation using the variables of gender and age to profile the attribute preferences based on these variables. Then test whether these variables affect the part-utilities. 
 <br>
-Identify the ideal product for the a priori segments and profile the segment-level attribute preferences if the differences are meaningful.
+Identify the ideal product for the priori segments and profile the segment-level attribute preferences if the differences are meaningful.
 <br><br>
 Result Visualization:
 <br><br>
