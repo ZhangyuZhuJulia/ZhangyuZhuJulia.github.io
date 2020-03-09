@@ -2,23 +2,23 @@
 
 ### Project description: 
 ---
-Running email marketing experiments to evaluate offers prior to sending the offers to a broader
-set of customers; Examining the impact of an email that was intended to drive purchases and evaluate whether the promotion is effective and who to target with the email campaign.
+The goal of this project is to evaluate whether the promotion is effective before sending it to a broader set of customers by running email marketing experiments and examining the impact of a promotion email that was intended to drive purchases. 
+<br>As well as getting insight from data to determine different potential market segmentation methods and decide what kind of customer to target with the email campaign.
 
 ### Procedures:
 ---
-**1. Slice and dice analysis** 
+**1. Slice and Dice Analysis** 
 
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
 
-1) Grouped customers based on their purchased products before
+1) Grouped customers based on their purchased history.
 <br><br>
 Graph:
-<br><br>
+<br>
 <img src="images/sliec_dice_1.png"/>
-<br><br>
+<br>
 Code:
-<br><br>
+<br>
 
 ```
 a. Chard 
@@ -34,11 +34,11 @@ ggplot(aes(fill = group, x=anyChard,y=Purch,ymax = Purch+sePurch,ymin=Purch-sePu
     geom_errorbar(position=dodge,width = 0.5)
 ```
 Graph: 
-<br><br>
+<br>
 <img src="images/slice_dice_3.png"/>
-<br><br>
+<br>
 Code:
-<br><br>
+<br>
 
 ```
 b. Sav  
@@ -54,14 +54,17 @@ ggplot(aes(fill = group, x=anySav_blanc,y=Purch,ymax = Purch+sePurch,ymin=Purch-
     geom_errorbar(position=dodge,width = 0.5)
 ```
 
-2) Grouped customers based on when did they make their purchase behavior or their customer features
+2) Grouped customers based on when did they make their purchase behavior and what kind of customer they belongs to
 <br><br>
+The assumption we made here are: <br>
+For those customers does not have any purchase behaviors but have other kinds of behavior recorded in the system, we classified them as customers who never purchased before.<br>
+For those customers who does not have any activity recorded in the system, we classified them as new customers.<br>
 Graph:
-<br><br>
+<br>
 <img src="images/slice_dice_2.png"/>
-<br><br>
+<br>
 Code:
-<br><br>
+<br>
 
 ```
 1) recent buyers vs. non-recent buyers: 
@@ -108,8 +111,7 @@ ggplot(aes(fill = group, x=past_purch_amount,y=Purch,ymax = Purch+sePurch,ymin=P
     geom_text(aes(label = round(Purch,2)),position=position_dodge(1),vjust=-2.5)+
     geom_errorbar(position=dodge,width = 0.5)
 ```
-4) Grouped customers based on visit frquency
-<br><br>
+4) Grouped customers based on the number of times they visit the website<br><br>
 Graph:
 <br><br>
 <img src="images/visit.png"/>
@@ -133,7 +135,7 @@ ggplot(aes(fill = group, x=visit_frequency,y=Purch,ymax = Purch+sePurch,ymin=Pur
 ```
 **2. “Individual-level” Conditional Causal Effect Estimates**
 
-The goal for this part is to build a causal forest model with all demographic characteristics, score each customer and decide to send an offer to which customer. 
+The goal for this part is to build a causal forest model with all demographic characteristics included. Score each customer and decide to send a promotional email to which customer. 
 
 ```
 ######################################## conditional effect #######################################  
