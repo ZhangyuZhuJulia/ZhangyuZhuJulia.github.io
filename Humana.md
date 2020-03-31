@@ -1,24 +1,24 @@
 ## Humana-Mays 2019 Healthcare Analytics Case Competition 
 
-### Case Description:
 ---
+### Case Description:
 Analyze 7 million medical records of 20,000 patients provided by Humana to create a model aim to predict if members will continue opioid therapy six months after initial prescribing. Provide insights and suggestions to help identify members at risk for continued long term use of opioid therapies allowing for early intervention.
 
-### Background Information:
 ---
+### Background Information:
 Throughout the early 2000s, Long Term Opioid Therapy (LTOT) for non-cancer pain conditions (NCPC) increased considerably without a corresponding increase in the incidence of NCPC.<br>
 As many as 1 in 4 patients receiving long term opioid therapy in a primary care setting will struggle with opioid disorder. <br>
 Evidence suggests an elevated risk for overdose, abuse, misuse, and negative health outcomes related to increased dosing or longer duration therapy, including fractures, Myocardial Infarction, and sexual dysfunction.
 
-### Definitions:
 ---
+### Definitions:
 1. Opioid Naïve <br>
 Defined as not having an opioid ‘on hand’ in the preceding 90 day period, based on service date and payday supply count.
 2. Long Term Opioid Therapy (LTOT) <br>
 Defined as continuous use of opioid medication with 90% of days covered over 6 months.
 
-### Procedures:
---- 
+---
+### Procedures: 
 **Step 1. Data prepartion**<br><br>
 **1). Getting insights from large and un-organized dataset**<br>
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br>
