@@ -1,12 +1,12 @@
 ## Email Marketing Experiments Project
 
-### Project description: 
 ---
+### Project description: 
 The goal of this project is to evaluate whether the promotion is effective before sending it to a broader set of customers by running email marketing experiments and examining the impact of a promotion email that was intended to drive purchases. 
 <br>As well as getting insight from data to determine different potential market segmentation methods and decide what kind of customer to target with the email campaign.
 
-### Procedures:
 ---
+### Procedures:
 **1. Slice and Dice Analysis** 
 
 The goal for this part is to illustrate the potential for targeting responses for this email campaign based on demographic characteristics.
