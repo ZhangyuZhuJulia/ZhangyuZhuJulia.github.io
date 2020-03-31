@@ -135,7 +135,9 @@ ggplot(aes(fill = group, x=visit_frequency,y=Purch,ymax = Purch+sePurch,ymin=Pur
 ```
 **2. “Individual-level” Conditional Causal Effect Estimates**
 
-The goal for this part is to build a causal forest model with all demographic characteristics included. Score each customer and decide to send a promotional email to which customer. 
+The goal for this part is to score customers and make prediction about customers we should send remail to. 
+The method we chose is to build a causal forest model with all demographic characteristics included. 
+Score each customer and decide to send a promotional email to which customer. 
 
 ```
 ######################################## conditional effect #######################################  
@@ -166,4 +168,6 @@ pre1$user_id <- d1$user_id
 target <- pre1[pre1$score > 0,]
 target_info <- d1[d1$user_id %in% target$user_id,]
 ```
+
+
 
