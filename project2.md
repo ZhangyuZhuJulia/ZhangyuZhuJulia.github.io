@@ -1,8 +1,10 @@
 ## Conjoint Analysis 
 
+---
 ### Project description:
 Aimed at revitalizing their product portfolio based on the opinions of potential end-users by analyzing the survey result and constructing a conjoint analysis as well as consider the customer segmentation method to target customers better.
 
+---
 ### Procedures:
 **1.Preprocessed data: change data format and impute missing value**
 
