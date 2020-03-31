@@ -19,7 +19,7 @@ Defined as continuous use of opioid medication with 90% of days covered over 6 m
 
 ---
 ### Procedures: 
-**Step 1. Pre-processing data **<br><br>
+**Step 1. Pre-processing data**<br><br>
 **1). Getting insights from large and un-organized dataset**<br><br>
 Because this case is deeply involved with a large amount of medical and healthcare knowledge and backgrounds, what we did first understand the data deeply and find the relationship between variables.<br><br>
 Based on the goal to predict if members will continue opioid therapy six months after initial prescribing, we think backward about possible causation leads to this result.<br><br>
